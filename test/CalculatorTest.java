@@ -29,8 +29,13 @@ public class CalculatorTest{
     	assertEquals(6, Calculator.add("1\n2,3"));
     }
 
-     @Test(expected = IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testWithNegatives(){
     	Calculator.add("2,-4,3,-5");
+    }
+
+    @Test
+    public void testBiggerThan1000(){
+    	assertEquals(2, Calculator.add("1001,2"));
     }
 }

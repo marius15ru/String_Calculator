@@ -14,7 +14,8 @@ public class Calculator{
 		    	num = Integer.parseInt(numbers[i]);
 		    	if(num < 0)
 		    		negativeFound(numbers, i);
-		    	sum += num;
+		    	else if(num <= 1000)
+		    		sum += num;
 		  	}
 		    
 		    return sum;
