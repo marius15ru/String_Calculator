@@ -1,0 +1,3 @@
+#!/bin/bash
+
+javac -classpath "lib/junit-4.12.jar:classes/" test/stringcalculator/*.java -d classes
