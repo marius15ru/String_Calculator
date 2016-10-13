@@ -2,13 +2,21 @@ package stringcalculator;
 
 public class Calculator{
     public static int add(String args){
-		int sum = 0, num = 0;
-		String numbers[] = args.split(",|\n");
-
 	 	if(args == "")
 			return 0;
 		else if(args != "")
 		{
+			int sum = 0, num = 0;
+			String numbers[];
+			
+			if(args.charAt(0) == '/' && args.charAt(1) == '/')
+			{
+				String delimiter[] = args.split("//|\n", 3);
+				numbers = delimiter[2].split(delimiter[1] + "|,|\n");
+			}
+			else
+				numbers = args.split(",|\n");
+
 		    for(int i = 0; i < numbers.length; i++)
 		    {
 		    	num = Integer.parseInt(numbers[i]);
