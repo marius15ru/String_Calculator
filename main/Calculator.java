@@ -8,17 +8,19 @@ public class Calculator{
 	 	if(args == ""){
 			return 0;
 		}
-		else if(args != ""){
-			if(sb.indexOf(",") != -1)
+		else if(args != "")
+		{
+			index2 = sb.indexOf(",");
+
+			while(index2 != -1)
 			{
-				index2 = sb.indexOf(",");
-				sum += Integer.parseInt(sb.substring(0, index2));
+				sum += Integer.parseInt(sb.substring(index1, index2));
 				index1 = index2+1;
+				index2 = sb.indexOf(",", index1);
 			}
 
 			index2 = sb.length();
 			sum += Integer.parseInt(sb.substring(index1, index2));
-
 			return sum;
 		}
 		else
